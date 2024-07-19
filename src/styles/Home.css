@@ -1,0 +1,35 @@
+.home_container {
+    border: 1px inset rgb(216, 200, 200);
+    height: 88vh;
+    width: 97vw;
+    padding-top: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            color: aqua;
+        }
+
+    }
+
+    a {
+        text-decoration: none;
+        border: 3px solid grey;
+    }
+
+    #gh:hover {
+        background-color: rgba(185, 15, 174, 0.294);
+        border-radius: 37px;
+        margin: 4px;
+        background-image: url('src/assets/GH.LOGO.png');
+    }
+
+    #ig:hover {
+        background-image: url('src/assets/i.png');
+    }
+
+}
