@@ -1,0 +1,14 @@
+
+.bio_container {
+    display: flex;
+    flex-direction: column;
+    border: 2.8px inset greenyellow;
+}
+
+ac {
+    border: 1px solid purple;
+}
+
+al {
+    border: 1px solid blue;
+}
