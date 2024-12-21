@@ -1,5 +1,25 @@
-## Welcome to [Anicka Codes ]('#)
+## Welcome to [Anicka Codes ]('#) Personal Portfolio
 
-_We appreciate you taking the time to be here & hope you enjoy this experience_
+_A front-end site showcasing skills and projects as an entry web developer, licensed cosmetologist, and entrepreneur_
 
->>Technologies Used
+## Table of Contents
+<!-- - [Installation](#installation) -->
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [License](#license)
+<!-- - [Project Structure](#project-structure) -->
+<!-- - [Contributing](#contributing) -->
+
+
+## Usage
+* View your portfolio
+* Check out projects and skills
+* Contact via social media links
+
+## Technologies Used
+* React
+* Material-UI
+* Vite
+
+## License
+* MIT License
