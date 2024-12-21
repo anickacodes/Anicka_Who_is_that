@@ -1,8 +1,15 @@
-import React, { useState } from "react";
-import { Box, Typography, Grid, Card, CardMedia, CardActionArea } from "@mui/material";
+import { useState } from "react";
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardMedia,
+  CardActionArea,
+} from "@mui/material";
 import ghLogo from "../data/github-mark.png";
 import igLogo from "../data/iglogo.jpg";
-import ltLogo from '../data/LinktreeLogo.webp';
+import ltLogo from "../data/LinktreeLogo.webp";
 
 const Home = () => {
   const [hoveredItemId, setHoveredItemId] = useState(null);
@@ -19,7 +26,7 @@ const Home = () => {
       id: "ig",
       href: "https://www.instagram.com/clnstylez_/",
       text: "CLNStylez_",
-      hoverText: "Follow Me on Instagram!",
+      hoverText: "Check Me Out on Instagram!",
       icon: igLogo,
     },
     {
@@ -36,7 +43,7 @@ const Home = () => {
       sx={{
         textAlign: "center",
         p: 4,
-        background: "linear-gradient(45deg, #3a7bd5, #00d2ff)",
+        background: "linear-gradient(-5deg,  #00d2ff, #3a7bd5)",
         minHeight: "100vh",
         color: "#fff",
       }}
@@ -51,7 +58,7 @@ const Home = () => {
           letterSpacing: "1px",
         }}
       >
-        From Vision to Reality: A Peek Into My Professional World
+        From Vision to Reality: Peek Into My Professional World
       </Typography>
       <Typography
         variant="body1"
@@ -64,8 +71,8 @@ const Home = () => {
           fontStyle: "italic",
         }}
       >
-        I’m an entrepreneur, licensed cosmetologist, and full-stack web developer. 
-        Let me share my journey with you.
+        I’m an entrepreneur, licensed cosmetologist, and full-stack web
+        developer. Let me share my journey with you.
       </Typography>
 
       <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
@@ -80,7 +87,8 @@ const Home = () => {
                 background: "rgba(181, 13, 13, 0.7)",
                 borderRadius: 4,
                 boxShadow: "0px 6px 18px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+                transition:
+                  "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
                 "&:hover": {
                   transform: "scale(1.1)",
                   boxShadow: "0px 12px 36px rgba(0, 0, 0, 0.2)",
@@ -103,7 +111,7 @@ const Home = () => {
                       objectFit: "contain",
                       borderTopLeftRadius: 4,
                       borderTopRightRadius: 4,
-                      padding: "10px",
+                      padding: "13px",
                     }}
                   />
                 )}
@@ -124,7 +132,6 @@ const Home = () => {
           </Grid>
         ))}
       </Grid>
-
     </Box>
   );
 };

@@ -1,15 +1,46 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: .44rem;
   text-align: center;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   justify-content: center;
 }
 
-*{
-  margin: 0;
-  padding: 0; 
-  box-sizing: border-box;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
+#root {
+  animation: fadeIn 1s ease-in;
+}
+
+
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    flex-direction: column;
+  }
+
+  footer {
+    padding: 1rem;
+  }
+}

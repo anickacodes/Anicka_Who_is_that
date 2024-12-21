@@ -112,11 +112,6 @@ ul li:hover {
   transform: translateY(-5px);
 }
 
-sub {
-  margin-top: 20px;
-  font-style: italic;
-  color: rgb(249, 171, 120)
-}
 
 
 @media (max-width: 768px) {
