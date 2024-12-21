@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import NHS from "./pages/NHS";
 import Contact from "./pages/Contact";
 import './App.css'
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
         <Route path="/clnStylez" element={<NHS />} />
         <Route path="/affiliates" element={<Contact />} />
       </Routes>
+      <Footer/>
     </Router>
+    
   );
 }
 
