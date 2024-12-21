@@ -29,21 +29,24 @@
 
 
 /* Book view styling */
+
 .book_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #723bb1;
   cursor: pointer;
   text-align: center;
+  background-color: linear-gradient(135deg, #723bb1, #a967d6, #f9ab78);
 }
 
 .book_image {
-  width: 200px;
-  height: auto;
+  width: 70vw;
+  height: 80vh;
   transition: transform 0.3s ease;
+  border-radius: 80%;
 }
 
 .book_image:hover {
@@ -61,12 +64,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border: 1px inset rgb(249, 171, 120);
   border-radius: 50%;
   height: 88vh;
-  width: 88vw;
+  width: 55vw;
   padding-top: 11px;
-  background-color: #05958c24;
+  background: linear-gradient(135deg, #723bb1, #a967d6, #f9ab78);
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
@@ -82,6 +86,11 @@ ul a {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
+ul a:hover {
+  color: #ff7f50;
+  transform: scale(1.05);
+}
+
 ul li {
   background-color: rgba(0, 255, 255, 0.343);
   padding: 10px 20px;
@@ -90,6 +99,14 @@ ul li {
   margin: 10px 0;
   transition: transform 0.3s ease;
 }
+
+ul li img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
 
 ul li:hover {
   transform: translateY(-5px);
@@ -103,11 +120,19 @@ sub {
 
 
 @media (max-width: 768px) {
-
-  .home_container{
-    height:40vh;
+  .home_container {
+    height: 70vh;
+    width: 90vw;
+    border-radius: 40%;
   }
-  ul {
+
+  ul li {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+/* ul {
     flex-direction: column;
     gap: 15px;
   }
@@ -115,4 +140,4 @@ sub {
   ul a {
     font-size: 1rem;
   }
-}
+} */

@@ -1,71 +1,131 @@
-import {useState} from "react";
-import "../styles/Home.css";
+import React, { useState } from "react";
+import { Box, Typography, Grid, Card, CardMedia, CardActionArea } from "@mui/material";
 import ghLogo from "../data/github-mark.png";
-import bookImage from "../data/book-cover.png";
+import igLogo from "../data/iglogo.jpg";
+import ltLogo from '../data/LinktreeLogo.webp';
 
 const Home = () => {
-  const [showHome, setShowHome] = useState(false);
+  const [hoveredItemId, setHoveredItemId] = useState(null);
 
   const items = [
     {
       id: "gh",
       href: "https://github.com/anickacodes",
-      text: "Anicka Codes",
+      text: "AnickaCodes",
       hoverText: "Visit My GitHub!",
       icon: ghLogo,
     },
     {
       id: "ig",
       href: "https://www.instagram.com/clnstylez_/",
-      text: "Nicki Styles",
+      text: "CLNStylez_",
       hoverText: "Follow Me on Instagram!",
-      icon: "src/data/cnl.jpeg",
+      icon: igLogo,
     },
     {
       id: "lt",
       href: "https://linktr.ee/Nickistylez",
       text: "Bellisima",
       hoverText: "Check Out My Linktree!",
+      icon: ltLogo,
     },
   ];
 
-  const handleMouseEnter = (e, hoverText) => {
-    e.target.textContent = hoverText;
-  };
-
-  const handleMouseLeave = (e, originalText) => {
-    e.target.textContent = originalText;
-  };
-
-  if (!showHome) {
-    // Render "book" view
-    return (
-      <div className="book_container" onClick={() => setShowHome(true)}>
-        <img src={bookImage} alt="Book Cover" className="book_image" />
-        <h3>Ready to judge?</h3>
-      </div>
-    );
-  }
-
-  // Render "Home" view
   return (
-    <div className="home_container">
-      <ul>
+    <Box
+      sx={{
+        textAlign: "center",
+        p: 4,
+        background: "linear-gradient(45deg, #3a7bd5, #00d2ff)",
+        minHeight: "100vh",
+        color: "#fff",
+      }}
+    >
+      <Typography
+        variant="h3"
+        gutterBottom
+        sx={{
+          fontWeight: "bold",
+          fontSize: "2.5rem",
+          lineHeight: 1.4,
+          letterSpacing: "1px",
+        }}
+      >
+        From Vision to Reality: A Peek Into My Professional World
+      </Typography>
+      <Typography
+        variant="body1"
+        gutterBottom
+        sx={{
+          maxWidth: "800px",
+          margin: "0 auto",
+          fontSize: "1.2rem",
+          lineHeight: 1.6,
+          fontStyle: "italic",
+        }}
+      >
+        I’m an entrepreneur, licensed cosmetologist, and full-stack web developer. 
+        Let me share my journey with you.
+      </Typography>
+
+      <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
         {items.map((item) => (
-          <a id={item.id} href={item.href} key={item.id}>
-            <li
-              onMouseEnter={(e) => handleMouseEnter(e, item.hoverText)}
-              onMouseLeave={(e) => handleMouseLeave(e, item.text)}
+          <Grid item key={item.id} xs={12} sm={6} md={4}>
+            <Card
+              onMouseEnter={() => setHoveredItemId(item.id)}
+              onMouseLeave={() => setHoveredItemId(null)}
+              sx={{
+                maxWidth: 345,
+                mx: "auto",
+                background: "rgba(181, 13, 13, 0.7)",
+                borderRadius: 4,
+                boxShadow: "0px 6px 18px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                  boxShadow: "0px 12px 36px rgba(0, 0, 0, 0.2)",
+                },
+              }}
             >
-              {item.text} {item.icon && <img src={item.icon} alt="icon" />}
-            </li>
-          </a>
+              <CardActionArea
+                component="a"
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.icon && (
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={item.icon}
+                    alt={item.hoverText}
+                    sx={{
+                      objectFit: "contain",
+                      borderTopLeftRadius: 4,
+                      borderTopRightRadius: 4,
+                      padding: "10px",
+                    }}
+                  />
+                )}
+                <Typography
+                  variant="h6"
+                  sx={{
+                    p: 2,
+                    textAlign: "center",
+                    color: hoveredItemId === item.id ? "primary.main" : "#fff",
+                    fontWeight: "bold",
+                    transition: "color 0.3s ease-in-out",
+                  }}
+                >
+                  {hoveredItemId === item.id ? item.hoverText : item.text}
+                </Typography>
+              </CardActionArea>
+            </Card>
+          </Grid>
         ))}
-      </ul>
-      <sub>
-        <i>Enrich Me, Empower Me, Educate Me ©️</i>
-      </sub>
-    </div>
+      </Grid>
+
+    </Box>
   );
 };
 
